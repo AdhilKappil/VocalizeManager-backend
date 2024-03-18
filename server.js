@@ -1,7 +1,6 @@
 import express from 'express'
 import doteenv from 'dotenv'
-
-
+import { notFound,errorHandler } from './middleware/errorMiddleware.js'
 import conectDb from './config/db.js'
 import cookieParser from 'cookie-parser'
 
@@ -9,7 +8,7 @@ import cookieParser from 'cookie-parser'
 
 doteenv.config()
 
-conectDb(); 
+conectDb();  
 
 const port = process.env.PORT || 5000
 
@@ -20,7 +19,8 @@ app.use(express.urlencoded({extended:true}))
 
 app.use(cookieParser())  
 
-
+app.use(notFound)
+app.use(errorHandler)
 
 app.get('/', (req, res)=> res.send('Server is redy'));
 
