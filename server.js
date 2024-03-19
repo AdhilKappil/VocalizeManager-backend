@@ -5,8 +5,8 @@ import adminRouter from './routes/adminRoutes.js'
 import { notFound,errorHandler } from './middleware/errorMiddleware.js'
 import conectDb from './config/db.js'
 import cookieParser from 'cookie-parser'
-const morgan=require("morgan")
-const cors = require("cors");
+import morgan from 'morgan'
+import cors from 'cors';
 
 app.use(cors());
 app.use(morgan("dev"))
