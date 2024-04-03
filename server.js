@@ -12,7 +12,7 @@ const app = express();
 
 // CORS setup
 const corsOptions = {
-    origin: ["https://digital-campus.vercel.app","http://localhost:3000"],
+    origin: ["https://vocalize-manager-frontend-1b.vercel.app","http://localhost:5000"],
     methods: ["GET", "PATCH", "PUT", "POST", "DELETE"],
     optionsSuccessStatus: 204,
   };
