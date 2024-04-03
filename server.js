@@ -10,8 +10,15 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(cors());
-app.use(morgan("dev"))
+// CORS setup
+const corsOptions = {
+    origin: ["https://digital-campus.vercel.app","http://localhost:3000"],
+    methods: ["GET", "PATCH", "PUT", "POST", "DELETE"],
+    optionsSuccessStatus: 204,
+  };
+  
+  app.use(cors(corsOptions));
+  app.use(morgan("dev"));
 
 doteenv.config()
 
