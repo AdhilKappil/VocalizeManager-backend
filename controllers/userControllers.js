@@ -45,6 +45,8 @@ const authUser = asyncHandler(async(req,res)=>{
 // @access  Public
 const registerUser = asyncHandler(async(req,res)=>{
 
+  console.log("hie");
+
     const {name, email, mobile, password} = req.body
 
     const profileImg = "181-1814767_person-svg-png-icon-free-download-profile-icon.png"

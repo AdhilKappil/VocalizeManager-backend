@@ -10,16 +10,22 @@ import cors from 'cors';
 
 const app = express();
   
-  app.use(cors());
-  app.use(morgan("dev"));
+app.use(
+  cors({
+    origin: ["https://vocalize-manager-frontend.vercel.app","http://localhost:5173"],
+    methods: ["GET,PUT,PATCH,POST,DELETE"],
+    credentials: true,
+    optionsSuccessStatus: 204,
+  })
+);
+
+app.use(morgan("dev"));
 
 doteenv.config()
 
 conectDb(); 
 
 const port = process.env.PORT || 5000
-
-
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
